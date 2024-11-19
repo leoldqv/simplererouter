@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/<path:path>')
-def reroute():
+def reroute(*, path=None):
     return redirect(os.environ.get('url'), code=302)
     
 if __name__ == "__main__":
